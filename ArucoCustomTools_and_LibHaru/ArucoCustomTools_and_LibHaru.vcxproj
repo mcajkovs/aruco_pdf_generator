@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{441CD8BA-307B-414C-91B8-776CFCDF174C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ArucoCustomTools_and_LibHaru</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)ext\libharu-2_3_0\include;$(ProjectDir)ext\aruco\include;$(INDE_OPENCV_DIR)\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)ext\libharu-2_3_0\lib\debug;$(OCVLIBDIR_D)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libhpdfsd.lib;$(OCVLIBs_D);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ext\aruco\src\arucofidmarkers.cpp" />
+    <ClCompile Include="ext\aruco\src\ar_omp.cpp" />
+    <ClCompile Include="ext\aruco\src\board.cpp" />
+    <ClCompile Include="ext\aruco\src\boarddetector.cpp" />
+    <ClCompile Include="ext\aruco\src\cameraparameters.cpp" />
+    <ClCompile Include="ext\aruco\src\chromaticmask.cpp" />
+    <ClCompile Include="ext\aruco\src\cvdrawingutils.cpp" />
+    <ClCompile Include="ext\aruco\src\highlyreliablemarkers.cpp" />
+    <ClCompile Include="ext\aruco\src\marker.cpp" />
+    <ClCompile Include="ext\aruco\src\markerdetector.cpp" />
+    <ClCompile Include="ext\aruco\src\subpixelcorner.cpp" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_3dmeasure.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_annotation.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_array.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_binary.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_boolean.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_catalog.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_destination.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_dict.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_doc.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_doc_png.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encoder.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encoder_cns.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encoder_cnt.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encoder_jp.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encoder_kr.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encoder_utf.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encrypt.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_encryptdict.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_error.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_exdata.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_ext_gstate.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_font.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_base14.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_cid.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_cns.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_cnt.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_jp.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_kr.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_tt.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_fontdef_type1.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_font_cid.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_font_tt.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_font_type1.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_gstate.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_image.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_image_ccitt.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_image_png.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_info.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_list.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_mmgr.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_name.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_namedict.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_null.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_number.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_objects.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_outline.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_pages.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_page_label.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_page_operator.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_pdfa.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_real.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_streams.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_string.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_u3d.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_utils.c" />
+    <ClCompile Include="ext\libharu-2_3_0\src\hpdf_xref.c" />
+    <ClCompile Include="final.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ext\aruco\include\aruco.h" />
+    <ClInclude Include="ext\aruco\include\arucofidmarkers.h" />
+    <ClInclude Include="ext\aruco\include\ar_omp.h" />
+    <ClInclude Include="ext\aruco\include\board.h" />
+    <ClInclude Include="ext\aruco\include\boarddetector.h" />
+    <ClInclude Include="ext\aruco\include\cameraparameters.h" />
+    <ClInclude Include="ext\aruco\include\chromaticmask.h" />
+    <ClInclude Include="ext\aruco\include\cvdrawingutils.h" />
+    <ClInclude Include="ext\aruco\include\exports.h" />
+    <ClInclude Include="ext\aruco\include\highlyreliablemarkers.h" />
+    <ClInclude Include="ext\aruco\include\marker.h" />
+    <ClInclude Include="ext\aruco\include\markerdetector.h" />
+    <ClInclude Include="ext\aruco\include\subpixelcorner.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_3dmeasure.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_annotation.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_catalog.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_conf.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_config.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_consts.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_destination.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_doc.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_encoder.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_encrypt.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_encryptdict.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_error.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_exdata.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_ext_gstate.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_font.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_fontdef.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_gstate.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_image.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_info.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_list.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_mmgr.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_namedict.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_objects.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_outline.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_pages.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_page_label.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_pdfa.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_streams.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_types.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_u3d.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_utils.h" />
+    <ClInclude Include="ext\libharu-2_3_0\include\hpdf_version.h" />
+    <ClInclude Include="ext\libharu-2_3_0\src\t4.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ext\libharu-2_3_0\include\Makefile.am" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
